@@ -52,7 +52,6 @@ export default function Contact() {
     <>
       <Head>
         <title>Contact Us | Touch Co Ltd</title>
-
         <meta
           name="description"
           content="Contact Touch Co Ltd for information about plots for sale in Kithimani, Konza City, Nakuru Bahati and Thika Greens Golf Estate."
@@ -100,7 +99,6 @@ export default function Contact() {
             {/* LEFT: CONTACT INFORMATION */}
             <div className="contact-information">
 
-              {/* Telephone */}
               <div className="contact-info-card">
                 <div className="contact-icon">☎</div>
 
@@ -118,7 +116,6 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* WhatsApp */}
               <div className="contact-info-card">
                 <div className="contact-icon">☘</div>
 
@@ -140,7 +137,6 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Property locations */}
               <div className="contact-info-card">
                 <div className="contact-icon">⌖</div>
 
@@ -160,7 +156,6 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Investment note */}
               <div className="contact-note">
                 <h3>Looking for your next investment?</h3>
 
@@ -194,7 +189,6 @@ export default function Contact() {
                 className="contact-form"
               >
 
-                {/* Full name */}
                 <div className="form-group">
                   <label htmlFor="fullName">
                     Full Name *
@@ -213,7 +207,6 @@ export default function Contact() {
                   />
                 </div>
 
-                {/* Phone and email */}
                 <div className="form-row">
 
                   <div className="form-group">
@@ -251,7 +244,6 @@ export default function Contact() {
 
                 </div>
 
-                {/* Property selection */}
                 <div className="form-group">
                   <label htmlFor="property">
                     Property of Interest *
@@ -290,7 +282,6 @@ export default function Contact() {
                   </select>
                 </div>
 
-                {/* Enquiry message */}
                 <div className="form-group">
                   <label htmlFor="message">
                     Your Message *
@@ -308,7 +299,6 @@ export default function Contact() {
                   />
                 </div>
 
-                {/* WhatsApp submission */}
                 <button
                   type="submit"
                   className="contact-submit-button"
