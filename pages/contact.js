@@ -1,4 +1,4 @@
-
+import Link from 'next/link';
 import { useState } from 'react';
 import Head from 'next/head';
 
@@ -61,7 +61,7 @@ export default function Contact() {
 
         {/* CONTACT BANNER */}
         <section className="page-banner contact-banner">
-          <span className="eyebrow">LET'S TALK PROPERTY</span>
+          <span className="eyebrow">LET&apos;S TALK PROPERTY</span>
 
           <h1>Contact Us</h1>
 
@@ -300,9 +300,11 @@ export default function Contact() {
             </p>
           </div>
 
-          <a href="/properties" className="contact-cta-button">
-            Explore Our Properties →
-          </a>
+          <Link href="/properties">
+  <a className="contact-cta-button">
+    Explore Our Properties →
+  </a>
+</Link>
         </section>
 
       </main>
