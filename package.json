@@ -1,3 +1,4 @@
+
 {
   "name": "realtor",
   "version": "0.1.0",
@@ -23,7 +24,6 @@
     "react-icons": "^4.2.0"
   },
   "devDependencies": {
-    "babel-eslint": "^10.1.0",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2"
   }

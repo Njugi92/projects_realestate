@@ -1,3 +1,4 @@
+
 import Head from 'next/head';
 import { Box } from '@chakra-ui/react';
 
@@ -8,16 +9,23 @@ export default function Layout({ children }) {
   return (
     <>
       <Head>
-        <title>Real Estate</title>
+        <title>Touch Co. Ltd. | Real Estate</title>
+        <meta
+          name="description"
+          content="Discover land and property investment opportunities with Touch Co. Ltd."
+        />
       </Head>
-      <Box maxWidth='1280px' m='auto'>
+
+      <Box minH="100vh" display="flex" flexDirection="column">
         <header>
           <Navbar />
         </header>
-        <main>{children}</main>
-        <footer>
-          <Footer />
-        </footer>
+
+        <Box as="main" flex="1" width="100%">
+          {children}
+        </Box>
+
+        <Footer />
       </Box>
     </>
   );
