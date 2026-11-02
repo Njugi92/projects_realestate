@@ -1,6 +1,7 @@
-import Link from 'next/link';
+
 import { useState } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -16,6 +17,7 @@ export default function Contact() {
     message: '',
   });
 
+  // Handle form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -25,6 +27,7 @@ export default function Contact() {
     }));
   };
 
+  // Submit enquiry through WhatsApp
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -49,6 +52,7 @@ export default function Contact() {
     <>
       <Head>
         <title>Contact Us | Touch Co Ltd</title>
+
         <meta
           name="description"
           content="Contact Touch Co Ltd for information about plots for sale in Kithimani, Konza City, Nakuru Bahati and Thika Greens Golf Estate."
@@ -61,7 +65,9 @@ export default function Contact() {
 
         {/* CONTACT BANNER */}
         <section className="page-banner contact-banner">
-          <span className="eyebrow">LET&apos;S TALK PROPERTY</span>
+          <span className="eyebrow">
+            LET&apos;S TALK PROPERTY
+          </span>
 
           <h1>Contact Us</h1>
 
@@ -94,6 +100,7 @@ export default function Contact() {
             {/* LEFT: CONTACT INFORMATION */}
             <div className="contact-information">
 
+              {/* Telephone */}
               <div className="contact-info-card">
                 <div className="contact-icon">☎</div>
 
@@ -111,6 +118,7 @@ export default function Contact() {
                 </div>
               </div>
 
+              {/* WhatsApp */}
               <div className="contact-info-card">
                 <div className="contact-icon">☘</div>
 
@@ -132,6 +140,7 @@ export default function Contact() {
                 </div>
               </div>
 
+              {/* Property locations */}
               <div className="contact-info-card">
                 <div className="contact-icon">⌖</div>
 
@@ -151,6 +160,7 @@ export default function Contact() {
                 </div>
               </div>
 
+              {/* Investment note */}
               <div className="contact-note">
                 <h3>Looking for your next investment?</h3>
 
@@ -163,7 +173,10 @@ export default function Contact() {
             </div>
 
             {/* RIGHT: CONTACT FORM */}
-            <div className="contact-form-container" id="contact-form">
+            <div
+              className="contact-form-container"
+              id="contact-form"
+            >
 
               <div className="contact-form-heading">
                 <span className="eyebrow">SEND AN ENQUIRY</span>
@@ -176,10 +189,16 @@ export default function Contact() {
                 </p>
               </div>
 
-              <form onSubmit={handleSubmit} className="contact-form">
+              <form
+                onSubmit={handleSubmit}
+                className="contact-form"
+              >
 
+                {/* Full name */}
                 <div className="form-group">
-                  <label htmlFor="fullName">Full Name *</label>
+                  <label htmlFor="fullName">
+                    Full Name *
+                  </label>
 
                   <input
                     id="fullName"
@@ -194,10 +213,13 @@ export default function Contact() {
                   />
                 </div>
 
+                {/* Phone and email */}
                 <div className="form-row">
 
                   <div className="form-group">
-                    <label htmlFor="phone">Phone Number *</label>
+                    <label htmlFor="phone">
+                      Phone Number *
+                    </label>
 
                     <input
                       id="phone"
@@ -212,7 +234,9 @@ export default function Contact() {
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="email">Email Address</label>
+                    <label htmlFor="email">
+                      Email Address
+                    </label>
 
                     <input
                       id="email"
@@ -227,8 +251,11 @@ export default function Contact() {
 
                 </div>
 
+                {/* Property selection */}
                 <div className="form-group">
-                  <label htmlFor="property">Property of Interest *</label>
+                  <label htmlFor="property">
+                    Property of Interest *
+                  </label>
 
                   <select
                     id="property"
@@ -237,33 +264,43 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                   >
-                    <option value="">Select a property</option>
+                    <option value="">
+                      Select a property
+                    </option>
+
                     <option value="Kithimani Plots">
                       Kithimani Plots - 50 × 100 ft
                     </option>
+
                     <option value="Konza City Plots">
                       Konza City Plots - 100 × 100 ft
                     </option>
+
                     <option value="Nakuru Bahati Plots">
                       Nakuru Bahati Plots - 100 × 100 ft
                     </option>
+
                     <option value="Thika Greens Golf Estate">
                       Thika Greens Golf Estate - 100 × 100 ft
                     </option>
+
                     <option value="Other Property Enquiry">
                       Other Enquiry
                     </option>
                   </select>
                 </div>
 
+                {/* Enquiry message */}
                 <div className="form-group">
-                  <label htmlFor="message">Your Message *</label>
+                  <label htmlFor="message">
+                    Your Message *
+                  </label>
 
                   <textarea
                     id="message"
                     name="message"
                     placeholder="Tell us what property information you need..."
-                    rows="5"
+                    rows={5}
                     value={form.message}
                     onChange={handleChange}
                     required
@@ -271,7 +308,11 @@ export default function Contact() {
                   />
                 </div>
 
-                <button type="submit" className="contact-submit-button">
+                {/* WhatsApp submission */}
+                <button
+                  type="submit"
+                  className="contact-submit-button"
+                >
                   <span>Send Enquiry via WhatsApp</span>
                   <span>→</span>
                 </button>
@@ -290,9 +331,13 @@ export default function Contact() {
         {/* BOTTOM CALL TO ACTION */}
         <section className="contact-cta">
           <div>
-            <span className="eyebrow">TOUCH CO. LTD</span>
+            <span className="eyebrow">
+              TOUCH CO. LTD
+            </span>
 
-            <h2>Ready To Own Your Piece Of Land?</h2>
+            <h2>
+              Ready To Own Your Piece Of Land?
+            </h2>
 
             <p>
               Explore our available plots and take the next step
@@ -301,10 +346,10 @@ export default function Contact() {
           </div>
 
           <Link href="/properties">
-  <a className="contact-cta-button">
-    Explore Our Properties →
-  </a>
-</Link>
+            <a className="contact-cta-button">
+              Explore Our Properties →
+            </a>
+          </Link>
         </section>
 
       </main>
