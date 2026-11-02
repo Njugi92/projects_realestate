@@ -8,6 +8,19 @@ import Footer from '../components/Footer';
 
 const WHATSAPP_NUMBER = '254722300705';
 
+const propertyOptions = [
+  'Kithimani Plots - 50 × 100 ft',
+  'Konza City Plots - 100 × 100 ft',
+  'Nakuru Bahati Plots - 100 × 100 ft',
+  'Thika Greens Golf Estate - 100 × 100 ft',
+  'Ruiru Murera Commercial Plots - 100 × 100 ft',
+  'Ruiru Kimbo Plots - 100 × 100 ft',
+  'Makuyu Plots - 100 × 100 ft',
+  'Kenol Plots - 100 × 100 ft',
+  'Kabati Plots - 100 × 100 ft',
+  'Other Property Enquiry',
+];
+
 export default function Contact() {
   const [form, setForm] = useState({
     fullName: '',
@@ -17,7 +30,6 @@ export default function Contact() {
     message: '',
   });
 
-  // Handle form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -27,19 +39,22 @@ export default function Contact() {
     }));
   };
 
-  // Submit enquiry through WhatsApp
   const handleSubmit = (event) => {
     event.preventDefault();
 
     const enquiry = [
       'NEW PROPERTY ENQUIRY - TOUCH CO. LTD',
+      '-----------------------------------',
       '',
       `Full Name: ${form.fullName}`,
       `Phone Number: ${form.phone}`,
-      `Email: ${form.email || 'Not provided'}`,
+      `Email Address: ${form.email || 'Not provided'}`,
       `Property of Interest: ${form.property}`,
       '',
-      `Message: ${form.message}`,
+      'CUSTOMER MESSAGE:',
+      form.message,
+      '',
+      'Please contact me with more information about this property.',
     ].join('\n');
 
     const whatsappUrl =
@@ -52,9 +67,10 @@ export default function Contact() {
     <>
       <Head>
         <title>Contact Us | Touch Co Ltd</title>
+
         <meta
           name="description"
-          content="Contact Touch Co Ltd for information about plots for sale in Kithimani, Konza City, Nakuru Bahati and Thika Greens Golf Estate."
+          content="Contact Touch Co Ltd for land and plot enquiries in Kithimani, Konza City, Nakuru Bahati, Thika Greens, Ruiru Murera, Ruiru Kimbo, Makuyu, Kenol and Kabati."
         />
       </Head>
 
@@ -141,10 +157,10 @@ export default function Contact() {
                 <div className="contact-icon">⌖</div>
 
                 <div>
-                  <h3>Property Locations</h3>
+                  <h3>Our Property Locations</h3>
 
                   <p>
-                    Explore our property opportunities in:
+                    Explore our available property opportunities in:
                   </p>
 
                   <ul className="contact-locations">
@@ -152,6 +168,11 @@ export default function Contact() {
                     <li>Konza City</li>
                     <li>Nakuru Bahati</li>
                     <li>Thika Greens Golf Estate</li>
+                    <li>Ruiru Murera</li>
+                    <li>Ruiru Kimbo</li>
+                    <li>Makuyu</li>
+                    <li>Kenol</li>
+                    <li>Kabati</li>
                   </ul>
                 </div>
               </div>
@@ -160,8 +181,8 @@ export default function Contact() {
                 <h3>Looking for your next investment?</h3>
 
                 <p>
-                  Let us help you explore available plots and
-                  find an option that suits your needs.
+                  Let us help you explore available plots and find
+                  an option that suits your needs and budget.
                 </p>
               </div>
 
@@ -189,6 +210,7 @@ export default function Contact() {
                 className="contact-form"
               >
 
+                {/* FULL NAME */}
                 <div className="form-group">
                   <label htmlFor="fullName">
                     Full Name *
@@ -207,6 +229,7 @@ export default function Contact() {
                   />
                 </div>
 
+                {/* PHONE AND EMAIL */}
                 <div className="form-row">
 
                   <div className="form-group">
@@ -244,6 +267,7 @@ export default function Contact() {
 
                 </div>
 
+                {/* PROPERTY SELECTION */}
                 <div className="form-group">
                   <label htmlFor="property">
                     Property of Interest *
@@ -260,28 +284,18 @@ export default function Contact() {
                       Select a property
                     </option>
 
-                    <option value="Kithimani Plots">
-                      Kithimani Plots - 50 × 100 ft
-                    </option>
-
-                    <option value="Konza City Plots">
-                      Konza City Plots - 100 × 100 ft
-                    </option>
-
-                    <option value="Nakuru Bahati Plots">
-                      Nakuru Bahati Plots - 100 × 100 ft
-                    </option>
-
-                    <option value="Thika Greens Golf Estate">
-                      Thika Greens Golf Estate - 100 × 100 ft
-                    </option>
-
-                    <option value="Other Property Enquiry">
-                      Other Enquiry
-                    </option>
+                    {propertyOptions.map((property) => (
+                      <option
+                        key={property}
+                        value={property}
+                      >
+                        {property}
+                      </option>
+                    ))}
                   </select>
                 </div>
 
+                {/* MESSAGE */}
                 <div className="form-group">
                   <label htmlFor="message">
                     Your Message *
@@ -299,6 +313,7 @@ export default function Contact() {
                   />
                 </div>
 
+                {/* SUBMIT */}
                 <button
                   type="submit"
                   className="contact-submit-button"
@@ -320,6 +335,7 @@ export default function Contact() {
 
         {/* BOTTOM CALL TO ACTION */}
         <section className="contact-cta">
+
           <div>
             <span className="eyebrow">
               TOUCH CO. LTD
@@ -335,11 +351,13 @@ export default function Contact() {
             </p>
           </div>
 
-          <Link href="/properties">
-            <a className="contact-cta-button">
-              Explore Our Properties →
-            </a>
+          <Link
+            href="/properties"
+            className="contact-cta-button"
+          >
+            Explore Our Properties →
           </Link>
+
         </section>
 
       </main>

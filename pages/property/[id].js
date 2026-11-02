@@ -1,6 +1,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+
 import {
   Box,
   Flex,
@@ -19,12 +20,19 @@ const PropertyDetails = ({ property }) => {
     return (
       <Box p={10} textAlign="center">
         <Heading>Plot not found</Heading>
-        <Text mt={3}>This plot may no longer be available.</Text>
-        <Link href="/" passHref>
-          <Button as="a" mt={5} colorScheme="blue">
-            Back to Plots
-          </Button>
-        </Link>
+
+        <Text mt={3}>
+          This plot may no longer be available.
+        </Text>
+
+        <Button
+          as={Link}
+          href="/"
+          mt={5}
+          colorScheme="blue"
+        >
+          Back to Plots
+        </Button>
       </Box>
     );
   }
@@ -41,14 +49,28 @@ const PropertyDetails = ({ property }) => {
 
   const amenities = property.amenities || [];
 
+  const whatsappMessage = encodeURIComponent(
+    `Hello, I am interested in ${property.title} in ${location}, priced at KSh ${Number(
+      property.price
+    ).toLocaleString('en-KE')}. Please share more details.`
+  );
+
+  const whatsappUrl = `https://wa.me/254722300705?text=${whatsappMessage}`;
+
   return (
     <Box minH="100vh" bg="gray.50" p={{ base: 3, md: 8 }}>
       <Box maxW="1400px" mx="auto">
-        <Link href="/" passHref>
-          <Button as="a" mb={6} variant="outline" colorScheme="blue">
-            ← Back to All Plots
-          </Button>
-        </Link>
+
+        {/* Back to properties */}
+        <Button
+          as={Link}
+          href="/"
+          mb={6}
+          variant="outline"
+          colorScheme="blue"
+        >
+          ← Back to All Plots
+        </Button>
 
         <Flex
           direction={{ base: 'column', lg: 'row' }}
@@ -58,6 +80,7 @@ const PropertyDetails = ({ property }) => {
           boxShadow="xl"
           minH={{ lg: '75vh' }}
         >
+
           {/* Large plot image */}
           <Box
             position="relative"
@@ -66,10 +89,11 @@ const PropertyDetails = ({ property }) => {
           >
             <Image
               src={imageUrl}
-              alt={property.title}
-              layout="fill"
-              objectFit="cover"
+              alt={property.title || 'Plot for sale'}
+              fill
+              style={{ objectFit: 'cover' }}
               priority
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </Box>
 
@@ -120,7 +144,11 @@ const PropertyDetails = ({ property }) => {
               <List spacing={3} mb={8}>
                 {amenities.map((amenity, index) => (
                   <ListItem key={`${amenity}-${index}`}>
-                    <Text as="span" color="green.500" fontWeight="bold">
+                    <Text
+                      as="span"
+                      color="green.500"
+                      fontWeight="bold"
+                    >
                       ✓
                     </Text>{' '}
                     {amenity}
@@ -133,24 +161,23 @@ const PropertyDetails = ({ property }) => {
               </Text>
             )}
 
+            {/* WhatsApp enquiry */}
             <Button
-  as="a"
-  href={`https://wa.me/254722300705?text=${encodeURIComponent(
-    `Hello, I am interested in ${property.title} in ${location}, priced at KSh ${Number(property.price).toLocaleString('en-KE')}. Please share more details.`
-  )}`}
-  target="_blank"
-  rel="noopener noreferrer"
-  colorScheme="green"
-  size="lg"
-  width="100%"
-  mb={3}
->
-  Inquire on WhatsApp
-</Button>
+              as="a"
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              colorScheme="green"
+              size="lg"
+              width="100%"
+              mb={3}
+            >
+              Inquire on WhatsApp
+            </Button>
 
             <Text fontSize="sm" color="gray.500" mt={3}>
-              Please confirm title deed details, utilities, access roads, and
-              availability before making payment.
+              Please confirm title deed details, utilities, access roads,
+              and availability before making payment.
             </Text>
           </Box>
         </Flex>

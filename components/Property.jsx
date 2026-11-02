@@ -14,6 +14,8 @@ const Property = ({ property }) => {
     property.location?.[0]?.name ||
     'Kenya';
 
+  const propertyLink = `/property/${property.id}`;
+
   return (
     <Box
       maxW="350px"
@@ -26,14 +28,16 @@ const Property = ({ property }) => {
       transition="transform 0.2s"
       _hover={{ transform: 'translateY(-5px)', boxShadow: 'xl' }}
     >
-      <Link href={`/property/${property.id}`} passHref>
-        <Box as="a" display="block" cursor="pointer">
-          <Box position="relative" height="220px">
+      {/* Property image and information */}
+      <Link href={propertyLink} style={{ display: 'block', textDecoration: 'none' }}>
+        <Box cursor="pointer">
+          <Box position="relative" height="220px" width="100%">
             <Image
               src={imageUrl}
-              alt={property.title}
-              layout="fill"
-              objectFit="cover"
+              alt={property.title || 'Property for sale'}
+              fill
+              style={{ objectFit: 'cover' }}
+              sizes="(max-width: 350px) 100vw, 350px"
             />
           </Box>
 
@@ -66,12 +70,16 @@ const Property = ({ property }) => {
         </Box>
       </Link>
 
+      {/* View details button */}
       <Flex px={5} pb={5}>
-        <Link href={`/property/${property.id}`} passHref>
-          <Button as="a" colorScheme="blue" width="100%">
-            View Plot Details
-          </Button>
-        </Link>
+        <Button
+          as={Link}
+          href={propertyLink}
+          colorScheme="blue"
+          width="100%"
+        >
+          View Plot Details
+        </Button>
       </Flex>
     </Box>
   );

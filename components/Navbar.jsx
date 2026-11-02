@@ -22,45 +22,54 @@ const Navbar = () => {
       zIndex={100}
       borderBottom="1px solid rgba(215, 173, 102, 0.3)"
     >
+      {/* Company branding */}
       <Box fontSize={{ base: 'lg', md: '2xl' }} fontWeight="bold">
-        <Link href="/">
-          <a className="touch-brand" onClick={closeMenu}>
-            TOUCH <span>CO. LTD.</span>
-          </a>
+        <Link
+          href="/"
+          className="touch-brand"
+          onClick={closeMenu}
+        >
+          TOUCH <span>CO. LTD.</span>
         </Link>
       </Box>
 
+      {/* Mobile menu button */}
       <button
         type="button"
         className="touch-menu-toggle"
         onClick={() => setMenuOpen((open) => !open)}
-        aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+        aria-label={
+          menuOpen ? 'Close navigation menu' : 'Open navigation menu'
+        }
         aria-expanded={menuOpen}
       >
         {menuOpen ? '✕' : '☰'}
       </button>
 
+      {/* Navigation links */}
       <div className={`touch-nav-links ${menuOpen ? 'touch-nav-open' : ''}`}>
-        <Link href="/">
-          <a onClick={closeMenu}>Home</a>
+        <Link href="/" onClick={closeMenu}>
+          Home
         </Link>
 
-        <Link href="/about">
-          <a onClick={closeMenu}>About</a>
+        <Link href="/about" onClick={closeMenu}>
+          About
         </Link>
 
-        <Link href="/properties">
-          <a onClick={closeMenu}>Properties</a>
+        <Link href="/properties" onClick={closeMenu}>
+          Properties
         </Link>
 
-        <Link href="/contact">
-          <a onClick={closeMenu}>Contact</a>
+        <Link href="/contact" onClick={closeMenu}>
+          Contact
         </Link>
 
-        <Link href="/contact">
-          <a className="touch-enquire" onClick={closeMenu}>
-            Enquire Now →
-          </a>
+        <Link
+          href="/contact"
+          className="touch-enquire"
+          onClick={closeMenu}
+        >
+          Enquire Now →
         </Link>
       </div>
     </Flex>

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Link from 'next/link';
+
 import {
   Box,
   Flex,
@@ -82,7 +83,7 @@ const properties = {
     name: 'Ruiru Murera Plots for Sale',
     size: '100 × 100 ft',
     price: 'KSh 2,000,000',
-    image: '/assets/images/kithimani.jpg',
+    image: '/assets/images/murera.png',
     description:
       'Spacious 100 × 100 ft plots in Ruiru Murera, suitable for buyers planning a home or a long-term land investment.',
     benefits: [
@@ -170,8 +171,16 @@ export default function PropertyDetails() {
     return (
       <Box p={10} textAlign="center">
         <Heading>Property not found</Heading>
-        <Text mt={3}>Please select a property from our listings.</Text>
-        <Button as="a" href="/properties" mt={5} colorScheme="green">
+        <Text mt={3}>
+          Please select a property from our listings.
+        </Text>
+
+        <Button
+          as={Link}
+          href="/properties"
+          mt={5}
+          colorScheme="green"
+        >
           View Properties
         </Button>
       </Box>
@@ -180,7 +189,11 @@ export default function PropertyDetails() {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setForm((previous) => ({ ...previous, [name]: value }));
+
+    setForm((previous) => ({
+      ...previous,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = (event) => {
@@ -208,11 +221,21 @@ export default function PropertyDetails() {
   };
 
   return (
-    <Box bg="#07111f" color="white" minH="100vh" py={{ base: 6, md: 12 }}>
-      <Box maxW="1400px" mx="auto" px={{ base: 4, md: 8 }}>
+    <Box
+      bg="#07111f"
+      color="white"
+      minH="100vh"
+      py={{ base: 6, md: 12 }}
+    >
+      <Box
+        maxW="1400px"
+        mx="auto"
+        px={{ base: 4, md: 8 }}
+      >
+        {/* Breadcrumb */}
         <Text color="#d7ad66" mb={6}>
           <Link href="/properties">
-            <a>Properties</a>
+            Properties
           </Link>
           {' / '}
           {property.name}
@@ -235,9 +258,10 @@ export default function PropertyDetails() {
               <Image
                 src={property.image}
                 alt={property.name}
-                layout="fill"
-                objectFit="cover"
+                fill
+                style={{ objectFit: 'cover' }}
                 priority
+                sizes="(max-width: 768px) 100vw, 60vw"
               />
             </Box>
 
@@ -264,6 +288,7 @@ export default function PropertyDetails() {
                     <Text color="#d7ad66" fontSize="xl">
                       ✓
                     </Text>
+
                     <Text lineHeight="1.8" color="gray.200">
                       {benefit}
                     </Text>
@@ -371,7 +396,11 @@ export default function PropertyDetails() {
                   Enquire on WhatsApp
                 </Button>
 
-                <Text fontSize="xs" color="gray.400" textAlign="center">
+                <Text
+                  fontSize="xs"
+                  color="gray.400"
+                  textAlign="center"
+                >
                   Your enquiry will open WhatsApp so you can review and send
                   your message.
                 </Text>

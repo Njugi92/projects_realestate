@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Box, Flex, Text, VStack } from '@chakra-ui/react';
 
@@ -24,6 +25,7 @@ const Footer = () => (
         <Text fontSize="2xl" fontWeight="bold">
           Touch <Box as="span" color="#9cdb42">Co.</Box>
         </Text>
+
         <Text fontSize="sm" color="gray.300" mt={1}>
           Invest today for a better tomorrow.
         </Text>
@@ -31,10 +33,10 @@ const Footer = () => (
 
       {/* Navigation */}
       <Flex gap={5} wrap="wrap" fontSize="sm">
-        <Link href="/"><a>Home</a></Link>
-        <Link href="/about"><a>About</a></Link>
-        <Link href="/properties"><a>Properties</a></Link>
-        <Link href="/contact"><a>Contact</a></Link>
+        <Link href="/">Home</Link>
+        <Link href="/about">About</Link>
+        <Link href="/properties">Properties</Link>
+        <Link href="/contact">Contact</Link>
       </Flex>
 
       {/* Contact details */}
@@ -55,6 +57,7 @@ const Footer = () => (
             textAlign: 'center',
             fontWeight: 'bold',
             display: 'inline-block',
+            textDecoration: 'none',
           }}
         >
           WhatsApp Us

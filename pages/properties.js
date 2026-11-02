@@ -51,8 +51,7 @@ const properties = [
     location: 'Ruiru Murera',
     size: '100 × 100 ft',
     price: 'KSh 2,000,000',
-    image:
-      '/assets/images/murera.png',
+    image: '/assets/images/murera.png',
     description:
       'Spacious plots for a planned family home or long-term land investment.',
   },
@@ -120,33 +119,30 @@ export default function Properties() {
             <Link
               href={`/properties/${property.slug}`}
               key={property.slug}
+              className="property-card property-card-link"
+              aria-label={`View details for ${property.name}`}
             >
-              <a
-                className="property-card property-card-link"
-                aria-label={`View details for ${property.name}`}
-              >
-                <div className="property-image">
-                  <img
-                    src={property.image}
-                    alt={property.name}
-                    loading="lazy"
-                  />
-                  <span>📍 {property.location}</span>
-                </div>
+              <div className="property-image">
+                <img
+                  src={property.image}
+                  alt={property.name}
+                  loading="lazy"
+                />
+                <span>📍 {property.location}</span>
+              </div>
 
-                <div className="property-info">
-                  <h3>{property.name}</h3>
-                  <p>{property.size}</p>
-                  <p>{property.description}</p>
+              <div className="property-info">
+                <h3>{property.name}</h3>
+                <p>{property.size}</p>
+                <p>{property.description}</p>
 
-                  <div className="property-bottom">
-                    <strong>{property.price}</strong>
-                    <span className="small-button">
-                      View Details →
-                    </span>
-                  </div>
+                <div className="property-bottom">
+                  <strong>{property.price}</strong>
+                  <span className="small-button">
+                    View Details →
+                  </span>
                 </div>
-              </a>
+              </div>
             </Link>
           ))}
         </div>
