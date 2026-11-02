@@ -84,10 +84,7 @@ export default function About() {
               assist you through your property search.
             </p>
 
-            <Link
-              href="/properties"
-              className="primary-button"
-            >
+            <Link href="/properties" className="primary-button">
               Explore Our Properties →
             </Link>
           </div>
@@ -147,7 +144,7 @@ export default function About() {
               START YOUR PROPERTY JOURNEY
             </span>
 
-            <h2>Let's Help You Find Your Next Plot</h2>
+            <h2>Let&apos;s Help You Find Your Next Plot</h2>
 
             <p>
               Browse our available properties or get in touch
@@ -155,10 +152,7 @@ export default function About() {
             </p>
           </div>
 
-          <Link
-            href="/contact"
-            className="primary-button"
-          >
+          <Link href="/contact" className="primary-button">
             Contact Our Team →
           </Link>
         </section>
