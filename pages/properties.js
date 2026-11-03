@@ -7,9 +7,9 @@ const properties = [
     name: 'Kithimani Plots',
     location: 'Kithimani',
     size: '50 × 100 ft',
-    price: 'KSh 200,000',
+    price: 'KSh 250,000',
     image:
-      'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=80',
+      '/assets/images/kithimani.jpg',
     description:
       'Affordable plots with water and electricity available.',
   },
@@ -18,9 +18,9 @@ const properties = [
     name: 'Konza City Plots',
     location: 'Konza City',
     size: '100 × 100 ft',
-    price: 'KSh 1,000,000',
+    price: 'KSh 600,000',
     image:
-      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80',
+      '/assets/images/konza.jpg',
     description:
       'Spacious plots for prospective property investors.',
   },
@@ -31,7 +31,7 @@ const properties = [
     size: '100 × 100 ft',
     price: 'KSh 650,000',
     image:
-      'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=80',
+      '/assets/images/bahati.jpg',
     description:
       'Explore land for your future home or investment.',
   },
@@ -62,7 +62,7 @@ const properties = [
     size: '100 × 100 ft',
     price: 'KSh 6,500,000',
     image:
-      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80',
+      '/assets/images/kimbo.jpg',
     description:
       'Premium-priced plots for prospective homeowners and property investors.',
   },
@@ -73,7 +73,7 @@ const properties = [
     size: '100 × 100 ft',
     price: 'KSh 950,000',
     image:
-      'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=80',
+      '/assets/images/makuyu.jpg',
     description:
       'Affordable land for buyers planning a future home or building a property portfolio.',
   },
@@ -84,7 +84,7 @@ const properties = [
     size: '100 × 100 ft',
     price: 'KSh 1,200,000',
     image:
-      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80',
+      '/assets/images/kenol.jpg',
     description:
       'Generously sized plots for prospective homeowners and land investors.',
   },
@@ -95,7 +95,7 @@ const properties = [
     size: '100 × 100 ft',
     price: 'KSh 850,000',
     image:
-      'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=80',
+      '/assets/images/kabati.jpg',
     description:
       'Explore land for future residential development or investment.',
   },
