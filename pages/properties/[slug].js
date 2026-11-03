@@ -97,7 +97,7 @@ const properties = {
     name: 'Ruiru Kimbo Plots for Sale',
     size: '100 × 100 ft',
     price: 'KSh 6,500,000',
-    image: '/assets/images/konza.jpg',
+    image: '/assets/images/kimbo.jpg',
     description:
       'A 100 × 100 ft land opportunity in Ruiru Kimbo for buyers considering residential development or property investment.',
     benefits: [
@@ -111,7 +111,7 @@ const properties = {
     name: 'Makuyu Plots for Sale',
     size: '100 × 100 ft',
     price: 'KSh 950,000',
-    image: '/assets/images/kithimani.jpg',
+    image: '/assets/images/makuyu.jpg',
     description:
       'Affordable 100 × 100 ft plots in Makuyu for buyers looking to plan a future home or invest in land.',
     benefits: [
@@ -125,7 +125,7 @@ const properties = {
     name: 'Kenol Plots for Sale',
     size: '100 × 100 ft',
     price: 'KSh 1,200,000',
-    image: '/assets/images/konza.jpg',
+    image: '/assets/images/kenol.jpg',
     description:
       '100 × 100 ft plots in Kenol for buyers exploring land for residential use or future investment.',
     benefits: [
@@ -139,7 +139,7 @@ const properties = {
     name: 'Kabati Plots for Sale',
     size: '100 × 100 ft',
     price: 'KSh 850,000',
-    image: '/assets/images/kithimani.jpg',
+    image: '/assets/images/kabati.jpg',
     description:
       'Affordable 100 × 100 ft plots in Kabati for people planning a future home or looking for a land investment opportunity.',
     benefits: [
