@@ -21,7 +21,7 @@ const slides = [
     description:
       'Own a 50 × 100 ft plot with water and electricity available.',
     image: '/assets/images/kithimani.jpg',
-    price: 'KSh 200,000',
+    price: 'KSh 250,000',
     location: 'Kithimani',
     size: '50 × 100 ft',
   },
@@ -32,7 +32,7 @@ const slides = [
     description:
       'Explore spacious plots for your future home or investment plans.',
     image: '/assets/images/konza.jpg',
-    price: 'KSh 1,000,000',
+    price: 'KSh 600,000',
     location: 'Konza City',
     size: '100 × 100 ft',
   },
@@ -64,7 +64,7 @@ const slides = [
     subtitle: 'EXPLORE LAND IN RUIRU',
     description:
       'Discover spacious plots for buyers considering residential development.',
-    image: '/assets/images/konza.jpg',
+    image: '/assets/images/kimbo.jpg',
     price: 'KSh 6,500,000',
     location: 'Ruiru Kimbo',
     size: '100 × 100 ft',
@@ -75,8 +75,8 @@ const slides = [
     subtitle: 'YOUR LAND INVESTMENT',
     description:
       'Explore affordable 100 × 100 ft plots in Makuyu.',
-    image: '/assets/images/kithimani.jpg',
-    price: 'KSh 950,000',
+    image: '/assets/images/makuyu.jpg',
+    price: 'KSh 850,000',
     location: 'Makuyu',
     size: '100 × 100 ft',
   },
@@ -97,7 +97,7 @@ const slides = [
     subtitle: 'LAND WITH POSSIBILITIES',
     description:
       'Explore affordable 100 × 100 ft plots in Kabati.',
-    image: '/assets/images/kithimani.jpg',
+    image: '/assets/images/kabati.jpg',
     price: 'KSh 850,000',
     location: 'Kabati',
     size: '100 × 100 ft',
